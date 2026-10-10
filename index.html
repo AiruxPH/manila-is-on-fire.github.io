@@ -1,100 +1,77 @@
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>City of Manila</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-    <style>
-        html, body {
-            font-family: 'Roboto', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        a.hover:underline:hover {
-            text-decoration: underline;
-        }
-
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#172b36">
+  <meta name="description" content="Explore the heritage, culture and landmarks of the City of Manila, Philippines.">
+  <title>Discover Manila | Heritage and Culture</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
-<body class="bg-gray-100">
-    <!-- Header Section -->
-    <header class="relative">
-        <img alt="Aerial view of Manila cityscape at night" class="w-full h-screen object-cover" height="1080" src="homebg.png" width="1920"/>
-        <nav class="fixed top-0 right-0 w-full flex justify-end py-8 bg-black bg-opacity-50 text-white pr-6">
-            <ul class="flex space-x-10">
-                <li><a class="hover:underline" onclick="scroll(0, 1024);" href="#home">Home</a></li>
-                <li><a class="hover:underline" href="#about">About</a></li>
-                <li><a class="hover:underline" href="#tourist-spots">Tourist Spots</a></li>
-                <li><a class="hover:underline" href="#history">History</a></li>
-                <li><a class="hover:underline" href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div id="home" class="absolute inset-0 flex flex-col justify-center items-center text-center text-white">
-            <h1 class="text-5xl font-bold">Welcome to the</h1>
-            <h2 class="text-6xl font-bold">City of MANILA</h2>
-        </div>
-    </header>
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-gray-200">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-8">About</h2>
-            <p class="text-lg mb-4">Manila serves as the center of culture, economy, education, and government in the Philippines. It is the most populous region of the country and one of the most densely populated in the world. It is also the main gateway for international travelers going to the Philippines by flight.</p>
-            <p class="text-lg mb-4">When you say “Manila,” it can mean two things. First, it can refer to the City of Manila, the capital of the Philippines. Manila is made up of 16 administrative districts, including Binondo, Ermita, Intramuros, Malate, and Quiapo, among others.</p>
-            <p class="text-lg mb-4">Second, the greater Metropolitan Manila area is also referred to as Manila. It is officially known as the National Capital Region (NCR) or Metro Manila. It is made up of the City of Manila, Makati, Quezon City, Parañaque, Pasay, Pasig, and Taguig, to name a few.</p>
-            <p class="text-lg">You can read more about it <a class="text-blue-500 underline" href="#">here</a>.</p>
-        </div>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="top">
+    <nav class="nav-wrap container" aria-label="Main navigation">
+      <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">✦</span> MANILA<span class="brand-dot">.</span></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-links"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="site-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#tourist-spots">Explore</a></li>
+        <li><a href="#history">History</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <span class="eyebrow light">THE HEART OF THE PHILIPPINES</span>
+        <h1 id="hero-heading">Discover the soul<br>of <em>Manila.</em></h1>
+        <p>Centuries of stories, unforgettable landmarks, and a culture that welcomes you in.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#tourist-spots">Explore the city <span aria-hidden="true">↗</span></a><a class="button button-outline" href="#about">Get to know Manila</a></div>
+      </div>
+      <a class="scroll-cue" href="#about">Scroll to explore <span aria-hidden="true">↓</span></a>
     </section>
-    <!-- Tourist Spots Section -->
-    <section id="tourist-spots" class="py-16 bg-gray-300">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-8">Tourist Spots</h2>
-            <p class="text-lg text-center mb-8">Manila, the vibrant capital of the Philippines, is a city teeming with history, culture, and modernity. From its Spanish colonial heritage to its bustling metropolis filled with skyscrapers, Manila offers a diverse array of attractions that cater to every traveler’s interests.</p>
-            <div class="flex flex-col items-center">
-                <img alt="Intramuros: The Walled City" class="w-full max-w-4xl mb-4" height="600" src="Intramuros 1.png" width="800"/>
-            </div>
-            <div class="flex flex-col items-center">
-                <img alt="Intramuros: The Walled City" class="w-full max-w-4xl mb-4" height="600" src="Rizal Park 2.png" width="800"/>
-            </div>
-            <div class="flex flex-col items-center">
-                <img alt="Intramuros: The Walled City" class="w-full max-w-4xl mb-4" height="600" src="Manila Cathedral 3.png" width="800"/>
-            </div>
-            <div class="flex flex-col items-center">
-                <img alt="Intramuros: The Walled City" class="w-full max-w-4xl mb-4" height="600" src="Ayala Museum 4.png" width="800"/>
-            </div>
-            <div class="flex flex-col items-center">
-                <img alt="Intramuros: The Walled City" class="w-full max-w-4xl mb-4" height="600" src="San Agustin Church 5.png" width="800"/>
-            </div>
-        </div>
+    <section class="section about-section" id="about" aria-labelledby="about-heading">
+      <div class="container split-layout">
+        <div><span class="eyebrow">WELCOME TO MANILA</span><h2 id="about-heading">A city with a story <em>around every corner.</em></h2></div>
+        <div class="section-copy"><p>The City of Manila is the capital of the Philippines, known for its historic neighborhoods, cultural landmarks, markets, and vibrant communities.</p><p>Manila is also often used to describe <strong>Metro Manila</strong>, the wider National Capital Region that includes several other cities. This guide focuses on the <strong>City of Manila</strong> itself.</p><a class="text-link" href="https://manila.gov.ph/" target="_blank" rel="noopener noreferrer">Visit the City of Manila website <span aria-hidden="true">↗</span></a></div>
+      </div>
     </section>
-    <!-- History Section -->
-    <section id="history" class="py-16 bg-gray-200">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-8">History of Manila</h2>
-            <p class="text-lg mb-4">Manila’s history is rich and spans centuries, beginning as a thriving settlement before becoming the political, economic, and cultural center of the Philippines. Long before Spanish colonization, the area was already inhabited by indigenous communities and Muslim settlers. It was ruled by Rajah Sulayman and his predecessors, who established a flourishing trade with nearby Asian regions, including China, India, and the Malay Archipelago. The name “Manila” comes from “Maynilad,” derived from a flowering plant that grew abundantly along the banks of the Pasig River.</p>
-            <p class="text-lg mb-4">In 1571, Spanish explorer Miguel López de Legazpi arrived, defeating the local rulers and establishing Manila as the capital of the Spanish East Indies. The Spanish built Intramuros, a fortified city that became the administrative and religious center of the colony. The city played a crucial role in the Manila-Acapulco Galleon Trade, a trade route that connected the Philippines to Mexico and Spain, making Manila a key global trading hub. This economic activity led to the city’s development, but it also made Intramuros a frequent target of foreign invasions, including attacks from Dutch, British, and Chinese pirates.</p>
-            <p class="text-lg mb-4">After over 300 years of Spanish rule, the Philippine Revolution (1896-1898) erupted, led by Filipino revolutionaries seeking independence. Although it was eventually defeated by the United States in the Spanish-American War and Manila was ceded to the U.S., the Philippines, including Manila, was transferred to the Americans under the Treaty of Paris. Manila saw major infrastructure improvements, including modern roads, schools, and public services. The U.S. also established a new form of government and introduced American culture to the city.</p>
-            <p class="text-lg mb-4">However, Manila faced immense destruction during World War II, particularly in 1945 when the city became a battleground between American and Japanese forces. The Battle of Manila led to widespread devastation, with a significant portion of the city’s infrastructure and historical landmarks being destroyed. It is considered one of the most tragic episodes in Manila’s history.</p>
-            <p class="text-lg mb-4">After the war, Manila was rebuilt and officially became the capital of the newly independent Republic of the Philippines in 1946. In the following decades, the city continued to expand, with the rise of modern buildings, commercial districts, and government institutions. Today, Manila remains the heart of the Philippines, blending its rich historical past with rapid urban development. It stands as a testament to the resilience of its people, preserving its heritage while adapting to the demands of modern times.</p>
-            <p class="text-lg">Source: <a class="text-blue-500 underline" href="https://citycouncilofmanila.com.ph/history-of-manila/narrative-history/">https://citycouncilofmanila.com.ph/history-of-manila/narrative-history/</a></p>
+    <section class="section spots-section" id="tourist-spots" aria-labelledby="spots-heading">
+      <div class="container">
+        <div class="section-heading"><div><span class="eyebrow">PLACES TO DISCOVER</span><h2 id="spots-heading">Iconic Manila <em>landmarks.</em></h2></div><p>Explore the places that bring the city's history and culture to life.</p></div>
+        <div class="spots-grid">
+          <article class="spot-card"><div class="spot-art art-intramuros" role="img" aria-label="Illustrated architectural shapes inspired by Intramuros"><span>01</span><span class="spot-symbol" aria-hidden="true">♜</span></div><div class="spot-info"><span class="spot-type">HISTORIC DISTRICT</span><h3>Intramuros</h3><p>Walk through Manila's walled city and discover centuries-old streets, fortifications, and heritage sites.</p><a href="https://www.google.com/maps/search/?api=1&query=Intramuros+Manila" target="_blank" rel="noopener noreferrer">Find on map ↗</a></div></article>
+          <article class="spot-card"><div class="spot-art art-rizal" role="img" aria-label="Illustration of a monument surrounded by a park"><span>02</span><span class="spot-symbol" aria-hidden="true">✿</span></div><div class="spot-info"><span class="spot-type">PUBLIC PARK</span><h3>Rizal Park</h3><p>A landmark public space honoring José Rizal, with gardens, monuments, and room to unwind.</p><a href="https://www.google.com/maps/search/?api=1&query=Rizal+Park+Manila" target="_blank" rel="noopener noreferrer">Find on map ↗</a></div></article>
+          <article class="spot-card"><div class="spot-art art-cathedral" role="img" aria-label="Illustration of a cathedral silhouette"><span>03</span><span class="spot-symbol" aria-hidden="true">♙</span></div><div class="spot-info"><span class="spot-type">HERITAGE CHURCH</span><h3>Manila Cathedral</h3><p>Admire the architecture and history of this well-known cathedral in Intramuros.</p><a href="https://www.google.com/maps/search/?api=1&query=Manila+Cathedral" target="_blank" rel="noopener noreferrer">Find on map ↗</a></div></article>
+          <article class="spot-card"><div class="spot-art art-augustin" role="img" aria-label="Illustration of a historic church arch"><span>04</span><span class="spot-symbol" aria-hidden="true">⌂</span></div><div class="spot-info"><span class="spot-type">HISTORIC CHURCH</span><h3>San Agustin Church</h3><p>Visit one of Manila's most celebrated historic churches and its remarkable heritage architecture.</p><a href="https://www.google.com/maps/search/?api=1&query=San+Agustin+Church+Intramuros" target="_blank" rel="noopener noreferrer">Find on map ↗</a></div></article>
         </div>
+        <p class="image-note">Landmark cards use decorative illustrations while verified photographs are being prepared.</p>
+      </div>
     </section>
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gray-300">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-8">Contact Hotlines</h2>
-            <div class="flex justify-center">
-                <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-                    <h3 class="text-2xl font-bold mb-4">DIAL 911</h3>
-                    <p class="text-lg mb-4">EMERGENCY HOTLINES</p>
-                    <p class="text-3xl font-bold mb-2">8568-6909</p>
-                    <p class="text-3xl font-bold mb-2">0932-662-2322</p>
-                    <p class="text-3xl font-bold mb-2">0950-700-3710</p>
-                    <p class="text-lg mt-4">MANILA PUBLIC INFORMATION OFFICE</p>
-                </div>
-            </div>
+    <section class="section history-section" id="history" aria-labelledby="history-heading">
+      <div class="container split-layout">
+        <div><span class="eyebrow">THROUGH THE YEARS</span><h2 id="history-heading">A history of <em>resilience.</em></h2><p class="history-intro">Manila's identity has been shaped by trade, colonial rule, war, rebuilding, and generations of communities.</p></div>
+        <div class="timeline">
+          <div class="timeline-item"><span class="timeline-year">Before 1571</span><h3>A thriving trading settlement</h3><p>Communities along Manila Bay and the Pasig River maintained connections with neighboring Asian trading networks.</p></div>
+          <div class="timeline-item"><span class="timeline-year">1571</span><h3>Spanish colonial Manila</h3><p>Spanish forces established Manila as a colonial capital, and Intramuros developed into its fortified center.</p></div>
+          <div class="timeline-item"><span class="timeline-year">1945</span><h3>The Battle of Manila</h3><p>Fighting during World War II devastated much of the city and caused immense civilian suffering.</p></div>
+          <div class="timeline-item"><span class="timeline-year">Today</span><h3>A city that keeps evolving</h3><p>Manila continues to blend historic landmarks with active neighborhoods, schools, commerce, and cultural life.</p></div>
         </div>
+      </div>
+      <div class="container source-note">Further reading: <a href="https://citycouncilofmanila.com.ph/history-of-manila/narrative-history/" target="_blank" rel="noopener noreferrer">Narrative History of Manila ↗</a></div>
     </section>
+    <section class="section contact-section" id="contact" aria-labelledby="contact-heading">
+      <div class="container contact-panel"><div><span class="eyebrow">PLAN YOUR VISIT</span><h2 id="contact-heading">Ready to explore <em>Manila?</em></h2><p>Find official city information and locate attractions before your visit. For emergencies in the Philippines, dial 911.</p></div><div class="contact-actions"><a class="button button-primary" href="https://manila.gov.ph/" target="_blank" rel="noopener noreferrer">Official city website ↗</a><a class="button button-dark" href="https://www.google.com/maps/search/?api=1&query=Manila+Philippines" target="_blank" rel="noopener noreferrer">View Manila on maps ↗</a></div></div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><span class="brand">✦ MANILA<span class="brand-dot">.</span></span><p>An independent guide to the City of Manila. Not an official government website.</p><a href="#home">Back to top ↑</a></div></footer>
 </body>
 </html>
